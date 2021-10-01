@@ -3,8 +3,11 @@
 <!--let p of products where products is imported in product-list.components.ts-->
 <div *ngFor="let p of products">
   <h3>
-    <!--[] is a property binding syntax-->
-    <a [title]="p.name + ' details'"> {{ p.name }} </a>
+    <!--[] is a property binding syntax
+    Modify the product name anchor to include a routerLink with the product.id as a parameter.-->
+    <a [title]="p.name + ' details'" [routerLink]="['/products', p.id]">
+      {{ p.name }}
+    </a>
   </h3>
 
   <p *ngIf="p.description">Description: {{ p.description }}</p>

@@ -10,11 +10,17 @@ import { ProductListComponent } from './product-list/product-list.component';
 //To make ProductAlertsComponent available to other components in the application, add it to AppModule's declarations in app.module.ts.
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 
+import { ProductDetailsComponent } from './product-details/product-details.component';
+
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([{ path: '', component: ProductListComponent }]),
+    RouterModule.forRoot([
+      { path: '', component: ProductListComponent },
+      //In app.module.ts, add a route for product details, with a path of products/:productId and ProductDetailsComponent for the component
+      { path: 'products/:productID', component: ProductDetailsComponent },
+    ]),
   ],
   declarations: [
     AppComponent,
