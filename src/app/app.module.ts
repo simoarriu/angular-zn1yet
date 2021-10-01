@@ -11,6 +11,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
       { path: '', component: ProductListComponent },
       //In app.module.ts, add a route for product details, with a path of products/:productId and ProductDetailsComponent for the component
       { path: 'products/:productId', component: ProductDetailsComponent },
+      { path: 'cart', component: CartComponent },
     ]),
   ],
   declarations: [
@@ -28,6 +30,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductListComponent,
     ProductAlertsComponent, //here
     ProductDetailsComponent,
+    CartComponent,
   ],
   bootstrap: [AppComponent],
 })
