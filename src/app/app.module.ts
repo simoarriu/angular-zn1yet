@@ -19,7 +19,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       //In app.module.ts, add a route for product details, with a path of products/:productId and ProductDetailsComponent for the component
-      { path: 'products/:productID', component: ProductDetailsComponent },
+      { path: 'products/:productId', component: ProductDetailsComponent },
     ]),
   ],
   declarations: [
@@ -27,6 +27,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     TopBarComponent,
     ProductListComponent,
     ProductAlertsComponent, //here
+    ProductDetailsComponent,
   ],
   bootstrap: [AppComponent],
 })
