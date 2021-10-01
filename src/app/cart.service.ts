@@ -8,6 +8,9 @@ The next step is to build a way for users to add products to a cart. This sectio
 import { Injectable } from '@angular/core';
 import { Product } from './products';
 
+//The next step is to inject the HttpClient service into your service so your application can fetch data and interact with external APIs and resources.
+import { HttpClient } from '@angular/common/http';
+
 @Injectable({ providedIn: 'root' })
 export class CartService {
   //In the CartService class, define an items property to store the array of the current products in the cart.
@@ -31,5 +34,14 @@ export class CartService {
     return this.items;
   }
 
-  constructor() {}
+  //To get shipping data, from shipping.json, You can use the HttpClient get() method.
+  //define a new getShippingPrices() method that uses the HttpClient get() method.
+  getShippingPrices() {
+    return this.http.get<{ type: string; price: number }[]>(
+      '/assets/shipping.json'
+    );
+  }
+
+  //Inject HttpClient into the CartService constructor().
+  constructor(private http: HttpClient) {}
 }
