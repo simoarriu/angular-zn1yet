@@ -12,3 +12,12 @@
   <span>{{ item.name }}</span>
   <span>{{ item.price | currency }}</span>
 </div>
+
+<!--Use the following steps to add a checkout form at the bottom of the Cart view.
+
+At the bottom of cart.component.html, add an HTML <form> element and a Purchase button.
+
+Use a formGroup property binding to bind checkoutForm to the HTML <form>.-->
+<form [formGroup]="checkoutForm">
+  <button class="button" type="submit">Purchase</button>
+</form>
