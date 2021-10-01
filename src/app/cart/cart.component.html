@@ -17,7 +17,22 @@
 
 At the bottom of cart.component.html, add an HTML <form> element and a Purchase button.
 
-Use a formGroup property binding to bind checkoutForm to the HTML <form>.-->
-<form [formGroup]="checkoutForm">
+Use a formGroup property binding to bind checkoutForm to the HTML <form>.
+
+On the form tag, use an ngSubmit event binding to listen for the form submission and call the onSubmit() method with the checkoutForm value.
+
+Add <input> fields for name and address, each with a formControlName attribute that binds to the checkoutForm form controls for name and address to their <input> fields. The complete component is as follows:
+-->
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name"> Name </label>
+    <input id="name" type="text" formControlName="name" />
+  </div>
+
+  <div>
+    <label for="address"> Address </label>
+    <input id="address" type="text" formControlName="address" />
+  </div>
+
   <button class="button" type="submit">Purchase</button>
 </form>
