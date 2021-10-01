@@ -3,6 +3,11 @@
 -->
 <h3>Cart</h3>
 
+<!--Add a link from the CartComponent view to the ShippingComponent view.-->
+<p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p>
+
 <div class="cart-item" *ngFor="let item of items">
   <span>{{ item.name }}</span>
   <span>{{ item.price | currency }}</span>
