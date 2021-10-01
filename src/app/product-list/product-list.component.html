@@ -1,0 +1,28 @@
+<h2>Products</h2>
+
+<!--let p of products where products is imported in product-list.components.ts-->
+<div *ngFor="let p of products">
+  <h3>
+    <!--[] is a property binding syntax-->
+    <a [title]="p.name + ' details'"> {{ p.name }} </a>
+  </h3>
+
+  <p *ngIf="p.description">Description: {{ p.description }}</p>
+
+  <button (click)="share()">Share</button>
+
+  <!--Finally, to display ProductAlertsComponent as a child of ProductListComponent, add the selector, <app-product-alerts> to product-list.component.html. Pass the current product as input to the component using property binding.
+  
+  To make the Notify Me button work, the child component needs to notify and pass the data to the parent component. The ProductAlertsComponent needs to emit an event when the user clicks Notify Me and the ProductListComponent needs to respond to the event.  
+
+  Update the ProductListComponent to receive data from the ProductAlertsComponent.
+  In product-list.component.html, bind <app-product-alerts> to the onNotify() method of the product list component. <app-product-alerts> is what displays the Notify Me button.
+  -->
+  <app-product-alerts [product]="p" (notify)="onNotify()"></app-product-alerts>
+  <!--<button *ngIf="p.price > 700">Notify me</button>-->
+</div>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
